@@ -4,3 +4,6 @@
 ```
 <link rel="stylesheet" href="https://coderlogy.github.io/Totter-Flow/dist/Totter-Flow.min.css">
 ```
+```
+ <link rel="stylesheet" href="https://coderlogy.github.io/Totter-Flow/css/Totter-Flow-Utility.min.css">
+```
