@@ -4,7 +4,7 @@ body {
 }
 :root {
     --spin-duration: 5s;
-    /* Default spin duration */
+    --angle: 360deg;
 }
 
 .flow-card {
