@@ -28,7 +28,7 @@ jobs:
       - name: Minify CSS
         run: |
           csso css/Totter-Flow.css --output css/Totter-Flow.min.css
-          csso css/Totter-Flow-Utilities.css --output css/Totter-Flow-Utilities.min.css
+          csso css/Totter-Flow-Utility.css --output css/Totter-Flow-Utility.min.css
 
       # Commit changes if any
       - name: Commit changes
