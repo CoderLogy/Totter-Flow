@@ -163,7 +163,3 @@
 .angle{
     --angle: 360deg;
 }
-.reverse-spin {
-    animation-direction: reverse;
-    /* Allows for reverse animation */
-}
