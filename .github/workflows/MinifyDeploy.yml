@@ -20,15 +20,15 @@ jobs:
         with:
           node-version: '16' # Use the latest LTS version or your required version
 
-      # Install clean-css-cli
-      - name: Install clean-css-cli
-        run: npm install clean-css-cli -g --no-cache
+      # Install csso-cli globally
+      - name: Install csso-cli
+        run: npm install -g csso-cli
 
-      # Minify CSS files
+      # Minify CSS files using csso
       - name: Minify CSS
         run: |
-          npx clean-css -o css/Totter-Flow.min.css css/Totter-Flow.css
-          npx clean-css -o css/Totter-Flow-Utilities.min.css css/Totter-Flow-Utilities.css
+          csso css/Totter-Flow.css --output css/Totter-Flow.min.css
+          csso css/Totter-Flow-Utilities.css --output css/Totter-Flow-Utilities.min.css
 
       # Commit changes if any
       - name: Commit changes
