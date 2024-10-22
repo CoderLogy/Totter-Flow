@@ -33,6 +33,8 @@ jobs:
         run: |
           csso css/Totter-Flow.css --output css/Totter-Flow.min.css
           csso css/Totter-Flow-Utility.css --output css/Totter-Flow-Utility.min.css
+          csso css/Totter-Flow-Custom.css --output css/Totter-Flow-Custom.min.css
+
 
       # Commit changes if any
       - name: Commit changes
