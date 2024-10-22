@@ -2,6 +2,10 @@ body {
     margin-top: 30px;
     background-color: #000
 }
+:root {
+    --spin-duration: 5s;
+    /* Default spin duration */
+}
 
 .flow-card {
     padding: 1.5em;
@@ -40,7 +44,7 @@ body {
     padding: 7px;
     border-radius: 12px;
     z-index: -1;
-    animation: 5s spin linear infinite
+    animation: var(--spin-duration) spin linear infinite
 }
 
 @keyframes spin {

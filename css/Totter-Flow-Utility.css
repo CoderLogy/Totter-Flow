@@ -158,9 +158,6 @@
 .spin {
     animation: spin 5s linear infinite;
 }
-/* Keyframe Utilities */
-@keyframes spin {
-    to {
-        --angle: 360deg;
-    }
+.angle{
+    --angle: 360deg;
 }
