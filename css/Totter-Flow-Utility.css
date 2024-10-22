@@ -15,10 +15,12 @@
     background-color: #2193b0;
 }
 
-.bg-gradient {
+.bg-gradient-conic {
     background-image: conic-gradient(#43cea2, #43cea2, #2193b0, #6dd5ed);
 }
-
+.bg-gradient{
+    background-image: linear-gradient(from right,#43cea2, #43cea2, #2193b0, #6dd5ed);
+}
 /* Text Color Utilities */
 .text-white {
     color: #fff;
@@ -160,4 +162,8 @@
 }
 .angle{
     --angle: 360deg;
+}
+.reverse-spin {
+    animation-direction: reverse;
+    /* Allows for reverse animation */
 }
