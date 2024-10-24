@@ -1,3 +1,9 @@
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 :root {
   /* Animation Settings */
   --custom-card-spin-duration: 5s;
@@ -41,14 +47,6 @@
   --custom-card-gradient-rainbow: #ff0000, #ff8800, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000;
 }
 
-/* Register custom property for animation */
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-/* Main Component */
 .custom-card {
   isolation: var(--custom-card-isolate);
   padding: var(--custom-card-padding);
@@ -65,7 +63,6 @@
     opacity 0.7s ease-in-out;
 }
 
-/* Hover Effects */
 .custom-card:hover {
   cursor: pointer;
   transform: scale(var(--custom-card-scale));
@@ -73,7 +70,6 @@
   opacity: var(--custom-card-hover-opacity);
 }
 
-/* Effect Base */
 .custom-card::before,
 .custom-card::after {
   content: "";
@@ -93,22 +89,19 @@
   padding: var(--custom-card-spread);
   border-radius: var(--custom-card-border-radius);
   z-index: -1;
-  animation: var(--custom-card-spin-duration) spin linear infinite;
+  animation: spin var(--custom-card-spin-duration) linear infinite;
 }
 
-/* Strong Effect */
 .custom-card::after {
   filter: blur(var(--custom-card-blur-strong));
   opacity: var(--custom-card-opacity-strong);
 }
 
-/* Soft Effect */
 .custom-card::before {
   filter: blur(var(--custom-card-blur-soft));
   opacity: var(--custom-card-opacity-soft);
 }
 
-/* Content Styles */
 .custom-card__content {
   white-space: nowrap;
   overflow: hidden;
@@ -116,51 +109,15 @@
   color: var(--custom-card-text);
 }
 
-/* Animation Keyframes */
 @keyframes spin {
+  from {
+    --angle: 0deg;
+  }
   to {
-    --angle: var(--custom-card-angle);
+    --angle: 360deg;
   }
 }
 
-/* Responsive Design */
-@media (max-width: 850px) {
-  .custom-card {
-    top: 7px;
-  }
-  
-  :root {
-    --custom-card-scale: 1.03;
-    --custom-card-spread: 3px;
-  }
-}
-
-/* Utility Classes for Animation Control */
-.custom-card--reverse {
-  --custom-card-direction: reverse;
-}
-
-.custom-card--angle-90 {
-  --custom-card-angle-end: 90deg;
-}
-
-.custom-card--angle-180 {
-  --custom-card-angle-end: 180deg;
-}
-
-.custom-card--angle-270 {
-  --custom-card-angle-end: 270deg;
-}
-
-.custom-card--fast {
-  --custom-card-spin-duration: 3s;
-}
-
-.custom-card--slow {
-  --custom-card-spin-duration: 8s;
-}
-
-/* Preset Gradient Classes */
 .custom-card--sunset::before,
 .custom-card--sunset::after {
   background-image: conic-gradient(
@@ -200,9 +157,19 @@
     var(--custom-card-gradient-rainbow)
   );
 }
+
+.custom-card--fast {
+  --custom-card-spin-duration: 3s;
+}
+
+.custom-card--slow {
+  --custom-card-spin-duration: 8s;
+}
+
 .custom-card--alternate {
   animation: alternate-spin var(--custom-card-spin-duration) linear infinite;
 }
+
 @keyframes alternate-spin {
   0% {
     --angle: 0deg;
@@ -215,3 +182,13 @@
   }
 }
 
+@media (max-width: 850px) {
+  .custom-card {
+    top: 7px;
+  }
+  
+  :root {
+    --custom-card-scale: 1.03;
+    --custom-card-spread: 3px;
+  }
+}
